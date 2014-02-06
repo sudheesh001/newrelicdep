@@ -1,0 +1,109 @@
+doctype 5
+html(lang="en")
+  head
+    title= title + ' - ' + site.title
+    meta(charset="utf-8")
+    meta(name="description", content="")
+    meta(name="author", content="")
+
+    <style>html, body { background-color: #E8EBEF; }</style>
+
+    link(rel="shortcut icon", href="/img/logo-small.png")
+    link(href="/css/bootstrap.css", rel="stylesheet")
+    link(href="/css/default.css", rel="stylesheet")
+    
+    //- link(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css', rel='stylesheet')
+    link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800", rel="stylesheet", type='text/css')
+    link(rel='stylesheet', type='text/css', href='/css/prettify.css')
+
+    <!--[if lt IE 9]>
+    script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+    <![endif]-->
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+
+  body
+    .header
+      .header-container
+          a(href='http://auth0.com')
+            .logo
+            h1.depth(title='Auth0') Auth0
+          ul
+            li
+              a(href='https://docs.auth0.com') Docs
+            li
+              a(href='http://blog.auth0.com') Blog
+
+    .container
+      nav
+        ul
+          -var navigation = site.menus.navigation
+          - for (var k1 in navigation)
+            - var l1 = navigation[k1]
+            li
+              - if (l1.icon)
+                  span
+                    i(class='fa #{l1.icon}')
+                    | #{l1.title}
+              - else
+                  span= l1.title
+              ul
+                - for (var k2 in l1.items)
+                  - var l2 = l1.items[k2]
+                  - if (l2.url == url)
+                      li.selected 
+                        a(href=furl(l2.url))= l2.title
+                  - else
+                      li 
+                        a(href=furl(l2.url))= l2.title
+        .fixit 
+          | Found a typo? 
+          i(class="fa fa-github")
+          a(href='#', target='_blank') Fix it :)
+      section
+        block content
+    footer
+        ul
+          -var footer = site.menus.footer
+          - for (var k1 in footer)
+            - var l1 = footer[k1]
+            li
+              a(href=furl(l1.url))= l1.title
+
+  script(src='/js/prettify.js')
+  script(type='text/javascript')
+
+    !function ($) {
+      $(function(){
+      $('pre').addClass('prettyprint');
+      window.prettyPrint && prettyPrint();   
+      })
+    }(window.jQuery);
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37952868-1']);
+    _gaq.push(['_setDomainName', 'auth0.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  script
+    var sectionIndex = 1;
+    $('h2,h3,h4').each(function(){
+      $(this)
+        .attr('id', sectionIndex)
+        .prepend('<a class="anchor" href="#' + sectionIndex + '"><i class="fa fa-link"></i></a>');
+      sectionIndex++;
+    });
+
+    if(window.location.hash) {
+      window.location.hash = window.location.hash;
+    }
+
+    $('.fixit a').attr('href', 'https://github.com/auth0/docs/tree/master/docs' + window.location.pathname + '.md');
+    

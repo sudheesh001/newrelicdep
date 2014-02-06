@@ -1,0 +1,79 @@
+{
+  "theme": "default",
+  "title": "Auth0 Docs",
+  "menus": {
+    "navigation": [
+      {
+        "title": "Getting Started",
+        "items": [
+          { "title": "Start here", "url": "/" }
+        ]
+      },
+      {
+        "title": "Web Apps",
+        "icon": "fa-laptop",
+        "items": [
+          { "title": "Node.js", "url": "/nodejs-tutorial" },
+          { "title": "ASP.NET", "url": "/aspnet-tutorial" },
+          { "title": "ASP.NET Owin", "url": "/aspnet-owin-tutorial" },
+          { "title": "Windows Azure", "url": "/azure-tutorial" },
+          { "title": "ServiceStack", "url": "/servicestack-tutorial" },
+          { "title": "PHP", "url": "/php-tutorial" },
+          { "title": "Ruby on Rails", "url": "/rails-tutorial" },
+          { "title": "Java", "url": "/java-tutorial" }
+        ]
+      },
+      {
+        "title": "Mobile/Native",
+        "icon": "fa-mobile",
+        "items": [
+          { "title": "iOS", "url": "/ios-tutorial" },
+          { "title": "Android", "url": "/android-tutorial" },
+          { "title": "Windows Phone", "url": "/windowsphone-tutorial" },
+          { "title": "Xamarin", "url": "/xamarin-tutorial" },
+          { "title": "Windows 8 (JS)", "url": "/win8-tutorial" },
+          { "title": "Windows 8 (C#)", "url": "/win8-cs-tutorial" },
+          { "title": "WPF / Winforms", "url": "/wpf-winforms-tutorial" }
+        ]
+      },
+      {
+        "title": "HTML5",
+        "icon": "fa-html5",
+        "items": [
+          { "title": "Single Page Apps", "url": "/singlepageapp-tutorial" },
+          { "title": "Ember.js", "url": "/ember-tutorial" },
+          { "title": "Angular.js", "url": "/angular-tutorial" }
+        ]
+      },
+      {
+        "title": "APIs",
+        "icon": "fa-terminal",
+        "items": [
+          { "title": "ASP.NET Web API", "url": "/aspnetwebapi-tutorial" },
+          { "title": "Node.js API", "url": "/nodeapi-tutorial" },
+          { "title": "Ruby API", "url": "/rubyapi-tutorial" },
+          { "title": "PHP API", "url": "/phpapi-tutorial" },
+          { "title": ".NET WCF", "url": "/wcf-tutorial" }
+        ]
+      },
+      {
+        "title": "Help Topics",
+        "icon": "fa-question-circle",
+        "items": [
+          { "title": "Login Widget", "url":"/login-widget2"},
+          { "title": "Normalized Profile", "url":"/user-profile"},
+          { "title": "Logout", "url":"/logout"},
+          { "title": "Rules", "url":"/rules"},
+          { "title": "Rules Repository", "url":"https://github.com/auth0/rules"},
+          { "title": "Database Connections", "url": "/mysql-connection-tutorial" },
+          { "title": "Protocols", "url":"/protocols"},
+          { "title": "Identity Providers", "url": "/identityproviders" },
+          { "title": "SAML", "url":"/saml-configuration"},
+          { "title": "Link Accounts", "url": "/link-accounts" },
+          { "title": "Custom Signup", "url": "/custom-signup" }
+        ]
+      }
+    ],
+    "footer": []
+  }
+}
